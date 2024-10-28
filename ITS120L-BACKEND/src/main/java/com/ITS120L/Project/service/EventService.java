@@ -1,7 +1,6 @@
 package com.ITS120L.Project.service;
 import com.ITS120L.Project.model.Event;
 import com.ITS120L.Project.repository.EventRepository;
-import com.ITS120L.Project.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +16,9 @@ public class EventService implements IEventService {
     }
 
     @Override
-    public Event addUser(Event event) { return repository.save(event);
+    public void addEvent(Event event) {
+        repository.save(event);
     }
+
 }
 

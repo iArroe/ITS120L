@@ -1,8 +1,11 @@
 package com.ITS120L.Project.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.util.Objects;
 import java.util.Date;
+
 
 @Entity
 @Table(name = "events")
@@ -18,7 +21,9 @@ public class Event {
     private String title;
     private String description;
     private String location;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date startDate;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date endDate;
 
     public Event() {
