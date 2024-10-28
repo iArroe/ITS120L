@@ -34,20 +34,21 @@
     <header class="header-section">
         <div class="container">
             <div class="logo">
-                <a href="original index.html">
+                <a href="index.html">
                     <img src="img/logo.png" alt="">
                 </a>
             </div>
             <div class="nav-menu">
                 <nav class="mainmenu mobile-menu">
                     <ul>
-                        <li class="active"><a href="original index.html">Home</a></li>
-                        <li><a href="./about-us.html">Schedule</a></li>
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <li><a href="/schedule">Schedule</a></li>
                         <li><a href="./schedule.html">Event Registration</a></li>
                         <li><a href="./contact.html">Event Survey</a></li>
                     </ul>
                 </nav>
-                <a href="#" class="primary-btn top-btn">Register</a>
+                <a href="/login" class="primary-btn top-btn">Login</a>
+                <a href="/register" class="primary-btn top-btn">Register</a>
             </div>
             <div id="mobile-menu-wrap"></div>
         </div>
@@ -61,7 +62,7 @@
         <input type="email" id="email" name="email" required><br><br>
         <label for="password">Password:</label><br>
         <input type="password" id="password" name="password" required><br><br>
-        <input type="submit" value="Register">
+        <input type="submit" value="Register" class="primary-btn top-btn">
     </form>
 
     <!-- Footer Section Begin -->

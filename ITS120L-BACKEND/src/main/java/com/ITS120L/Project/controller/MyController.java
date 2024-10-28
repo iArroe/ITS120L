@@ -27,18 +27,18 @@ public class MyController {
     @Autowired
     IFeedbackService feedbackService;
 
-    @GetMapping("/events")
+    @GetMapping("/schedule")
     public String showEvents(Model model){
         var events= (List<Event>) eventService.findAll();
         model.addAttribute("events", events);
-        return "showEvents";
+        return "schedule";
     }
 
-    @PostMapping("/events")
+    @PostMapping("/registerEvent")
     public String addEvent(@ModelAttribute Event event, Model model){
         model.addAttribute("event", event);
         eventService.addEvent(event);
-        return "showEvents";
+        return "registerEvent";
     }
 
     @GetMapping("/users")
@@ -80,7 +80,7 @@ public class MyController {
         if (user != null) {
             session.setAttribute("loggedInUser", user);
             redirectAttributes.addFlashAttribute("successMessage", "Login successful! Welcome, " + user.getEmail());
-            return "redirect:/";
+            return "index";
         } else {
             model.addAttribute("errorMessage", "Invalid email or password");
             model.addAttribute("loginFailed", true);
@@ -95,6 +95,12 @@ public class MyController {
         return "login";
     }
 
+    //Logout
+    @GetMapping("/logout")
+    public String logout(HttpSession session) {
+        session.invalidate();
+        return "redirect:/index.html";
+    }
 
     //Verify User for Adding Event
     @PostMapping("/addEvent")

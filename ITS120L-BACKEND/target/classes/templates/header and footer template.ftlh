@@ -34,36 +34,57 @@
     <header class="header-section">
         <div class="container">
             <div class="logo">
-                <a href="index.html">
+                <a href="original index.html">
                     <img src="img/logo.png" alt="">
                 </a>
             </div>
             <div class="nav-menu">
                 <nav class="mainmenu mobile-menu">
                     <ul>
-                        <li class="active"><a href="index.html">Home</a></li>
-                        <li><a href="/schedule">Schedule</a></li>
-                        <li><a href="./schedule.html">Event Registration</a></li>
-                        <li><a href="./contact.html">Event Survey</a></li>
-                    </ul>
-                </nav>
-                <a href="/login" class="primary-btn top-btn">Login</a>
-                <a href="/register" class="primary-btn top-btn">Register</a>
-            </div>
-            <div id="mobile-menu-wrap"></div>
-        </div>
-    </header>
-    <!-- Header End -->
+                        <#if loggedInUser.userType == "admin">
+                        <li><a href="./event-management.html">Event Management</a></li>
+                        <li><a href="./reporting-analytics.html">Reporting Analytics</a></li>
+                        <li><a href="./event-survey.html">Event Survey</a></li>
+                        <li><a href="./profile.html">Profile</a></li>
+                        <a href="/logout" class="primary-btn top-btn">Logout</a>
+                        <#else>
+                        <li class="active"><a href="index.ftlh>Home</a></li>
+                        <li><a href="./about-us.html">Schedule</a></li>
+                        <li><a href="./event-registration.html">Event Registration</a></li>
+                        <li><a href="./event-survey.html">Survey</a></li>
+                        <a href="/logout" class="primary-btn top-btn">Logout</a>
+                    </#if>
+                </ul>
+            </nav>
+            <#if !loggedInUser??>
+            <a href="/register" class="primary-btn top-btn">Register</a>
+        </#if>
+    </div>
+    <div id="mobile-menu-wrap"></div>
+</div>
+</header>
+        <!-- Header End -->
 
-    <form action="/register" method="post">
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name" required><br><br>
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
-        <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password" required><br><br>
-        <input type="submit" value="Register" class="primary-btn top-btn">
-    </form>
+    <!-- Hero Section Begin -->
+    <section class="hero-section set-bg" data-setbg="img/hero.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="hero-text">
+                        <h2>Change Your Mood<br /> Leave Laughing</h2>
+                        <a href="#" class="primary-btn">Buy Ticket</a>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <img src="img/hero-right.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Body Here -->
+    
 
     <!-- Footer Section Begin -->
     <footer class="footer-section">
