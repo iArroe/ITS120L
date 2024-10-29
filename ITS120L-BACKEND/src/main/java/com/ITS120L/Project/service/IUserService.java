@@ -7,4 +7,6 @@ import java.util.List;
 public interface IUserService {
     User addUser(User user);
     List<User> findAll();
+
+    User findByEmailAndPassword(String email, String password);
 }

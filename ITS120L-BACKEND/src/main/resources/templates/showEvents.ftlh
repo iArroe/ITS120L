@@ -30,7 +30,6 @@
                <th>Location</th>
                <th>Start Date</th>
                <th>End Date</th>
-               <th>Start Date</th>
                <th>User</th>
            </tr>
            <#list events as event>

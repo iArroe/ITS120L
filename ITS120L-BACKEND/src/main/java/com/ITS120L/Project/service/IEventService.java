@@ -7,5 +7,5 @@ import java.util.List;
 public interface IEventService {
     List<Event> findAll();
 
-    Event addUser(Event event);
+    void addEvent(Event event);
 }
