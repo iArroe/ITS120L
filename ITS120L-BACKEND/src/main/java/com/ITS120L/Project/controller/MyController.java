@@ -27,6 +27,18 @@ public class MyController {
     @Autowired
     IFeedbackService feedbackService;
 
+    @GetMapping("/")
+    public String home() {
+        return "index";
+    }
+
+    @GetMapping("/index")
+    public String indexEvents(Model model){
+        var events= (List<Event>) eventService.findAll();
+        model.addAttribute("events", events);
+        return "index";
+    }
+
     @GetMapping("/schedule")
     public String showEvents(Model model){
         var events= (List<Event>) eventService.findAll();
@@ -79,8 +91,7 @@ public class MyController {
         User user = userService.findByEmailAndPassword(email, password);
         if (user != null) {
             session.setAttribute("loggedInUser", user);
-            redirectAttributes.addFlashAttribute("successMessage", "Login successful! Welcome, " + user.getEmail());
-            return "index";
+            return "redirect:/index";
         } else {
             model.addAttribute("errorMessage", "Invalid email or password");
             model.addAttribute("loginFailed", true);
@@ -99,7 +110,7 @@ public class MyController {
     @GetMapping("/logout")
     public String logout(HttpSession session) {
         session.invalidate();
-        return "redirect:/index.html";
+        return "redirect:/index";
     }
 
     //Verify User for Adding Event
@@ -113,7 +124,7 @@ public class MyController {
             model.addAttribute("events", events);
             return "addEvent";
         } else {
-            return "redirect:/login";
+            return "redirect:";
         }
     }
 
@@ -128,4 +139,9 @@ public class MyController {
         }
     }
 
+    //get list of events to show in index.ftlh or wherever needed
+    @ModelAttribute ("events")
+    public List<Event> populateEvents() {
+        return eventService.findAll();
+    }
 }

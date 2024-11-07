@@ -34,35 +34,42 @@
     <header class="header-section">
         <div class="container">
             <div class="logo">
-                <a href="original index.html">
+                <a href="/index">
                     <img src="img/logo.png" alt="">
                 </a>
             </div>
             <div class="nav-menu">
                 <nav class="mainmenu mobile-menu">
                     <ul>
+                        <#if loggedInUser??>
                         <#if loggedInUser.userType == "admin">
-                        <li><a href="./event-management.html">Event Management</a></li>
-                        <li><a href="./reporting-analytics.html">Reporting Analytics</a></li>
-                        <li><a href="./event-survey.html">Event Survey</a></li>
-                        <li><a href="./profile.html">Profile</a></li>
+                        <li><a href="#">Event Management</a></li>
+                        <li><a href="#">Reporting Analytics</a></li>
+                        <li><a href="#">Event Survey</a></li>
+                        <li><a href="#">Profile</a></li>
                         <a href="/logout" class="primary-btn top-btn">Logout</a>
                         <#else>
-                        <li class="active"><a href="index.ftlh">Home</a></li>
+                        <li class="active"><a href="/index">Home</a></li>
                         <li><a href="/schedule">Schedule</a></li>
-                        <li><a href="./event-registration.html">Event Registration</a></li>
-                        <li><a href="./event-survey.html">Survey</a></li>
+                        <li><a href="#">Event Registration</a></li>
+                        <li><a href="#">Survey</a></li>
                         <a href="/logout" class="primary-btn top-btn">Logout</a>
                     </#if>
-                </ul>
-            </nav>
-            <#if !loggedInUser??>
-            <a href="/register" class="primary-btn top-btn">Register</a>
-        </#if>
+                    <#else>
+                    <li class="active"><a href="/index">Home</a></li>
+                    <li><a href="/schedule">Schedule</a></li>
+                    <li><a href="./event-registration.html">Event Registration</a></li>
+                    <li><a href="./event-survey.html">Survey</a></li>
+                    <a href="/login" class="primary-btn top-btn">Login</a>
+                    <a href="/register" class="primary-btn top-btn">Register</a>
+                </#if>
+            </ul>
+        </nav>
     </div>
     <div id="mobile-menu-wrap"></div>
 </div>
 </header>
+
         <!-- Header End -->
 
     <!-- Hero Section Begin -->
@@ -148,330 +155,75 @@
     </section>
     <!-- Home About Section End -->
 
-    <!-- Team Member Section Begin -->
-    <section class="team-member-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <h2>Who are the Comedians?</h2>
-                        <p>These are our comedians, you can see each person information</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="member-item set-bg" data-setbg="img/team-member/member-1.jpg">
-            <div class="mi-social">
-                <div class="mi-social-inner bg-gradient">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-instagram"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                </div>
-            </div>
-            <div class="mi-text">
-                <h5>Charla Diva</h5>
-                <span>Comedian</span>
-            </div>
-        </div>
-        <div class="member-item set-bg" data-setbg="img/team-member/member-2.jpg">
-            <div class="mi-social">
-                <div class="mi-social-inner bg-gradient">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-instagram"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                </div>
-            </div>
-            <div class="mi-text">
-                <h5>Ate Leng</h5>
-                <span>Comedian</span>
-            </div>
-        </div>
-        <div class="member-item set-bg" data-setbg="img/team-member/member-3.jpg">
-            <div class="mi-social">
-                <div class="mi-social-inner bg-gradient">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-instagram"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                </div>
-            </div>
-            <div class="mi-text">
-                <h5>Papa Chubs</h5>
-                <span>Comedian</span>
-            </div>
-        </div>
-        <div class="member-item set-bg" data-setbg="img/team-member/member-4.jpg">
-            <div class="mi-social">
-                <div class="mi-social-inner bg-gradient">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-instagram"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                </div>
-            </div>
-            <div class="mi-text">
-                <h5>Bibs Galore</h5>
-                <span>Comedian</span>
-            </div>
-        </div>
-        <div class="member-item set-bg" data-setbg="img/team-member/member-5.jpg">
-            <div class="mi-social">
-                <div class="mi-social-inner bg-gradient">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-instagram"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                    <a href="#"><i class="fa fa-linkedin"></i></a>
-                </div>
-            </div>
-            <div class="mi-text">
-                <h5>Nikki Naks</h5>
-                <span>Comedian</span>
-            </div>
-        </div>
-    </section>
-    <!-- Team Member Section End -->
-
     <!-- Schedule Section Begin -->
-    <section class="schedule-section spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <h2>Our Schedule</h2>
-                        <p>Do not miss anything topic about the event</p>
-                    </div>
-                </div>
+<section class="events-section spad">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="section-title">
+                <h2>Schedule</h2>
             </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="schedule-tab">
-                        <ul class="nav nav-tabs" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">
-                                    <h5>Day 1</h5>
-                                    <p>November 07, 2024</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">
-                                    <h5>Day 2</h5>
-                                    <p>November 08, 2024</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">
-                                    <h5>Day 3</h5>
-                                    <p>November 09, 2024</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#tabs-4" role="tab">
-                                    <h5>Day 4</h5>
-                                    <p>November 10, 2024</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#tabs-5" role="tab">
-                                    <h5>Day 5</h5>
-                                    <p>November 11, 2024</p>
-                                </a>
-                            </li>
-                        </ul><!-- Tab panes -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Start Date</th>
+                    <th>Location</th>
+                    <th>Organizer</th>
+                </tr>
+                </thead>
+                <tbody>
+                <#list events as event>
+                <tr>
+                    <td>${event.title}</td>
+                    <td>${event.startDate?string("MMMM dd, yyyy")}</td>
+                    <td>${event.location}</td>
+                    <td>${event.user.name}</td>
+                </tr>
+                </#list>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+        </section>
     <!-- Schedule Section End -->
-
-    <!-- Pricing Section Begin -->
-    <section class="pricing-section set-bg spad" data-setbg="img/pricing-bg.jpg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <h2>Comedy Show Pricing</h2>
-                        <p>Grab your tickets for a night of laughter!</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-8">
-                    <div class="price-item">
-                        <h4>Open Mic Night</h4>
-                        <div class="pi-price">
-                            <h2><span>$</span>15</h2>
-                        </div>
-                        <ul>
-                            <li>Entry to Open Mic Show</li>
-                            <li>Complimentary Drink</li>
-                            <li>Support Local Comedians</li>
-                        </ul>
-                        <a href="#" class="price-btn">Get Ticket <span class="arrow_right"></span></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-8">
-                    <div class="price-item top-rated">
-                        <div class="tr-tag">
-                            <i class="fa fa-star"></i>
-                        </div>
-                        <h4>Weekend Comedy Special</h4>
-                        <div class="pi-price">
-                            <h2><span>$</span>35</h2>
-                        </div>
-                        <ul>
-                            <li>Entry to Weekend Show</li>
-                            <li>2 Drinks Included</li>
-                            <li>Delicious Appetizer</li>
-                            <li>Meet & Greet with Comedians</li>
-                        </ul>
-                        <a href="#" class="price-btn">Get Ticket <span class="arrow_right"></span></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-8">
-                    <div class="price-item">
-                        <h4>VIP Comedy Experience</h4>
-                        <div class="pi-price">
-                            <h2><span>$</span>59</h2>
-                        </div>
-                        <ul>
-                            <li>Front Row Seats</li>
-                            <li>Unlimited Drinks</li>
-                            <li>Special VIP Dinner Menu</li>
-                            <li>Exclusive After-Show Meet & Greet</li>
-                        </ul>
-                        <a href="#" class="price-btn">Get Ticket <span class="arrow_right"></span></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Pricing Section End -->
-
-    <!-- Newslatter Section Begin -->
-    <section class="newslatter-section">
-        <div class="container">
-            <div class="newslatter-inner set-bg" data-setbg="img/newslatter-bg.jpg">
-                <div class="ni-text">
-                    <h3>Subscribe Newsletter</h3>
-                    <p>Subscribe to our newsletter and don’t miss anything</p>
-                </div>
-                <form action="#" class="ni-form">
-                    <input type="text" placeholder="Your email">
-                    <button type="submit">Subscribe</button>
-                </form>
-            </div>
-        </div>
-    </section>
-    <!-- Newslatter Section End -->
-
-    <!-- Contact Section Begin -->
-    <section class="contact-section spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="section-title">
-                        <h2>Location</h2>
-                        <p>Get directions to our event center</p>
-                    </div>
-                    <div class="cs-text">
-                        <div class="ct-address">
-                            <span>Address:</span>
-                            <p>Marikina <br />Philippines</p>
-                        </div>
-                        <ul>
-                            <li>
-                                <span>Phone:</span>
-                                (+63)-9345-267-8910
-                            </li>
-                            <li>
-                                <span>Email:</span>
-                                sample@gmail.com
-                            </li>
-                        </ul>
-                        <div class="ct-links">
-                            <span>Website:</span>
-                            <p>https://laughconference/L&DRestobar.com</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="cs-map">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61762.5911367867!2d121.06337720320727!3d14.646746861031875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b9a2777a00f9%3A0x6d36c8f429a12fc6!2sMarikina%2C%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1729848690137!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-                            height="400" style="border:0;" allowfullscreen=""></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     <!-- Contact Section End -->
 
     <!-- Footer Section Begin -->
-    <footer class="footer-section">
-        <div class="container">
-            <div class="partner-logo owl-carousel">
-                <a href="#" class="pl-table">
-                    <div class="pl-tablecell">
-                        <img src="img/partner-logo/logo-1.png" alt="">
-                    </div>
-                </a>
-                <a href="#" class="pl-table">
-                    <div class="pl-tablecell">
-                        <img src="img/partner-logo/logo-2.png" alt="">
-                    </div>
-                </a>
-                <a href="#" class="pl-table">
-                    <div class="pl-tablecell">
-                        <img src="img/partner-logo/logo-3.png" alt="">
-                    </div>
-                </a>
-                <a href="#" class="pl-table">
-                    <div class="pl-tablecell">
-                        <img src="img/partner-logo/logo-4.png" alt="">
-                    </div>
-                </a>
-                <a href="#" class="pl-table">
-                    <div class="pl-tablecell">
-                        <img src="img/partner-logo/logo-5.png" alt="">
-                    </div>
-                </a>
-                <a href="#" class="pl-table">
-                    <div class="pl-tablecell">
-                        <img src="img/partner-logo/logo-6.png" alt="">
-                    </div>
-                </a>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="footer-text">
-                        <div class="ft-logo">
-                            <a href="#" class="footer-logo"><img src="img/footer-logo.png" alt=""></a>
-                        </div>
-                        <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Comedians</a></li>
-                            <li><a href="#">Schedule</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                        <div class="copyright-text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
-                        <div class="ft-social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-youtube-play"></i></a>
-                        </div>
-                    </div>
+<footer class="footer-section">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="footer-text">
+                <div class="ft-logo">
+                    <a href="#" class="footer-logo"><img src="img/footer-logo.png" alt=""></a>
                 </div>
+                <ul>
+                    <#if loggedInUser?? && loggedInUser.userType == "admin">
+                    <li><a href="#">Event Management</a></li>
+                    <li><a href="#">Report Analytics</a></li>
+                    <li><a href="#">Event Survey</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <#else>
+                    <li><a href="/index">Home</a></li>
+                    <li><a href="/schedule">Schedule</a></li>
+                    <li><a href="#">Event Registration</a></li>
+                    <li><a href="#">Survey</a></li>
+                </#if>
+            </ul>
+            <div class="ft-social">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-youtube-play"></i></a>
             </div>
         </div>
-    </footer>
+    </div>
+</div>
+</div>
+        </footer>
     <!-- Footer Section End -->
 
     <!-- Js Plugins -->

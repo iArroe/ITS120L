@@ -34,7 +34,7 @@
     <header class="header-section">
         <div class="container">
             <div class="logo">
-                <a href="original index.html">
+                <a href="/index">
                     <img src="img/logo.png" alt="">
                 </a>
             </div>
@@ -48,10 +48,10 @@
                         <li><a href="./profile.html">Profile</a></li>
                         <a href="/logout" class="primary-btn top-btn">Logout</a>
                         <#else>
-                        <li class="active"><a href="index.ftlh>Home</a></li>
-                        <li><a href="./about-us.html">Schedule</a></li>
-                        <li><a href="./event-registration.html">Event Registration</a></li>
-                        <li><a href="./event-survey.html">Survey</a></li>
+                        <li class="active"><a href="/index">Home</a></li>
+                        <li><a href="#">Schedule</a></li>
+                        <li><a href="#">Event Registration</a></li>
+                        <li><a href="#">Survey</a></li>
                         <a href="/logout" class="primary-btn top-btn">Logout</a>
                     </#if>
                 </ul>
@@ -65,90 +65,42 @@
 </header>
         <!-- Header End -->
 
-    <!-- Hero Section Begin -->
-    <section class="hero-section set-bg" data-setbg="img/hero.jpg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7">
-                    <div class="hero-text">
-                        <h2>Change Your Mood<br /> Leave Laughing</h2>
-                        <a href="#" class="primary-btn">Buy Ticket</a>
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    <img src="img/hero-right.png" alt="">
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Hero Section End -->
-
     <!-- Body Here -->
-    
 
-    <!-- Footer Section Begin -->
-    <footer class="footer-section">
-        <div class="container">
-            <div class="partner-logo owl-carousel">
-                <a href="#" class="pl-table">
-                    <div class="pl-tablecell">
-                        <img src="img/partner-logo/logo-1.png" alt="">
-                    </div>
-                </a>
-                <a href="#" class="pl-table">
-                    <div class="pl-tablecell">
-                        <img src="img/partner-logo/logo-2.png" alt="">
-                    </div>
-                </a>
-                <a href="#" class="pl-table">
-                    <div class="pl-tablecell">
-                        <img src="img/partner-logo/logo-3.png" alt="">
-                    </div>
-                </a>
-                <a href="#" class="pl-table">
-                    <div class="pl-tablecell">
-                        <img src="img/partner-logo/logo-4.png" alt="">
-                    </div>
-                </a>
-                <a href="#" class="pl-table">
-                    <div class="pl-tablecell">
-                        <img src="img/partner-logo/logo-5.png" alt="">
-                    </div>
-                </a>
-                <a href="#" class="pl-table">
-                    <div class="pl-tablecell">
-                        <img src="img/partner-logo/logo-6.png" alt="">
-                    </div>
-                </a>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="footer-text">
-                        <div class="ft-logo">
-                            <a href="#" class="footer-logo"><img src="img/footer-logo.png" alt=""></a>
-                        </div>
-                        <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Comedians</a></li>
-                            <li><a href="#">Schedule</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                        <div class="copyright-text"><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
-                        <div class="ft-social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-youtube-play"></i></a>
-                        </div>
-                    </div>
+        <!-- Footer Section Start -->
+<footer class="footer-section">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="footer-text">
+                <div class="ft-logo">
+                    <a href="#" class="footer-logo"><img src="img/footer-logo.png" alt=""></a>
+                </div>
+                <ul>
+                    <#if loggedInUser?? && loggedInUser.userType == "admin">
+                    <li><a href="#">Event Management</a></li>
+                    <li><a href="#">Report Analytics</a></li>
+                    <li><a href="#">Event Survey</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <#else>
+                    <li><a href="/index">Home</a></li>
+                    <li><a href="/schedule">Schedule</a></li>
+                    <li><a href="#">Event Registration</a></li>
+                    <li><a href="#">Survey</a></li>
+                </#if>
+                </ul>
+                <div class="ft-social">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-youtube-play"></i></a>
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
+</div>
+</footer>
     <!-- Footer Section End -->
 
     <!-- Js Plugins -->
