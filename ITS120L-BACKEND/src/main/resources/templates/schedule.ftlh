@@ -43,23 +43,26 @@
                     <ul>
                         <#if loggedInUser??>
                         <#if loggedInUser.userType == "admin">
-                        <li><a href="#">Event Management</a></li>
-                        <li><a href="#">Reporting Analytics</a></li>
+                        <li><a href="/index">Home</a></li>
+                        <li><a href="/manage-event">Event Management</a></li>
+                        <li><a href="/analytics">Reporting Analytics</a></li>
                         <li><a href="#">Event Survey</a></li>
                         <li><a href="#">Profile</a></li>
                         <a href="/logout" class="primary-btn top-btn">Logout</a>
                         <#else>
-                        <li class="active"><a href="/index">Home</a></li>
-                        <li><a href="/schedule">Schedule</a></li>
-                        <li><a href="#">Event Registration</a></li>
-                        <li><a href="#">Survey</a></li>
+                        <li><a href="/index">Home</a></li>
+                        <li class="active"><a href="/schedule">Schedule</a></li>
+                        <li><a href="/event-registration">Event Registration</a></li>
+                        <li><a href="#">Attend</a></li>
+                        <li><a href="/survey">Survey</a></li>
                         <a href="/logout" class="primary-btn top-btn">Logout</a>
                     </#if>
                     <#else>
                     <li><a href="/index">Home</a></li>
                     <li class="active"><a href="/schedule">Schedule</a></li>
-                    <li><a href="#">Event Registration</a></li>
-                    <li><a href="#">Survey</a></li>
+                    <li><a href="/event-registration">Event Registration</a></li>
+                    <li><a href="#">Attend</a></li>
+                    <li><a href="/survey">Survey</a></li>
                     <a href="/login" class="primary-btn top-btn">Login</a>
                     <a href="/register" class="primary-btn top-btn">Register</a>
                 </#if>
@@ -69,11 +72,7 @@
     <div id="mobile-menu-wrap"></div>
 </div>
 </header>
-
-
         <!-- Header End -->
-
-
 
     <!-- Body Here -->
         <!-- Events Table Begin -->
@@ -82,7 +81,7 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="section-title">
-                <h2>Existing Events</h2>
+                <h2>Events</h2>
                 <p>List of all scheduled events</p>
             </div>
             <table class="table table-bordered">
@@ -101,8 +100,8 @@
                 <tr>
                     <td>${event.title}</td>
                     <td>${event.description}</td>
-                    <td>${event.startDate?string("yyyy-MM-dd")}</td>
-                    <td>${event.endDate?string("yyyy-MM-dd")}</td>
+                    <td>${event.startDate?string("MMMM dd yyyy")}</td>
+                    <td>${event.endDate?string("MMMM dd yyyy")}</td>
                     <td>${event.location}</td>
                     <td>${event.user.name}</td>
                 </tr>
@@ -125,15 +124,16 @@
                 </div>
                 <ul>
                     <#if loggedInUser?? && loggedInUser.userType == "admin">
-                    <li><a href="#">Event Management</a></li>
-                    <li><a href="#">Report Analytics</a></li>
+                    <li><a href="/manage">Event Management</a></li>
+                    <li><a href="/analytics">Report Analytics</a></li>
                     <li><a href="#">Event Survey</a></li>
                     <li><a href="#">Profile</a></li>
                     <#else>
                     <li><a href="/index">Home</a></li>
                     <li><a href="/schedule">Schedule</a></li>
-                    <li><a href="#">Event Registration</a></li>
-                    <li><a href="#">Survey</a></li>
+                    <li><a href="/event-registration">Event Registration</a></li>
+                    <li><a href="#">Attend</a></li>
+                    <li><a href="/survey">Survey</a></li>
                 </#if>
             </ul>
             <div class="ft-social">

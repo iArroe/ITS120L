@@ -4,6 +4,7 @@ import com.ITS120L.Project.repository.FeedbackRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 @Service
 public class FeedbackService implements IFeedbackService {
@@ -17,6 +18,11 @@ public class FeedbackService implements IFeedbackService {
 
     @Override
     public Feedback addFeedback(Feedback feedback) { return repository.save(feedback);
+    }
+
+    @Override
+    public List<Feedback> findFeedbackById(Long eventId) {
+        return (List<Feedback>) repository.findByEventEventId(eventId);
     }
 }
 

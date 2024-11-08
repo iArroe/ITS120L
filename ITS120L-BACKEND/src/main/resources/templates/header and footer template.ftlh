@@ -41,24 +41,33 @@
             <div class="nav-menu">
                 <nav class="mainmenu mobile-menu">
                     <ul>
+                        <#if loggedInUser??>
                         <#if loggedInUser.userType == "admin">
-                        <li><a href="./event-management.html">Event Management</a></li>
-                        <li><a href="./reporting-analytics.html">Reporting Analytics</a></li>
-                        <li><a href="./event-survey.html">Event Survey</a></li>
-                        <li><a href="./profile.html">Profile</a></li>
+                        <li class="active"><a href="/index">Home</a></li>
+                        <li><a href="/manage-event">Event Management</a></li>
+                        <li><a href="/analytics">Reporting Analytics</a></li>
+                        <li><a href="#">Event Survey</a></li>
+                        <li><a href="#">Profile</a></li>
                         <a href="/logout" class="primary-btn top-btn">Logout</a>
                         <#else>
                         <li class="active"><a href="/index">Home</a></li>
-                        <li><a href="#">Schedule</a></li>
-                        <li><a href="#">Event Registration</a></li>
-                        <li><a href="#">Survey</a></li>
+                        <li><a href="/schedule">Schedule</a></li>
+                        <li><a href="/event-registration">Event Registration</a></li>
+                        <li><a href="#">Attend</a></li>
+                        <li><a href="/survey">Survey</a></li>
                         <a href="/logout" class="primary-btn top-btn">Logout</a>
                     </#if>
-                </ul>
-            </nav>
-            <#if !loggedInUser??>
-            <a href="/register" class="primary-btn top-btn">Register</a>
-        </#if>
+                    <#else>
+                    <li class="active"><a href="/index">Home</a></li>
+                    <li><a href="/schedule">Schedule</a></li>
+                    <li><a href="/event-registration">Event Registration</a></li>
+                    <li><a href="#">Attend</a></li>
+                    <li><a href="/survey">Survey</a></li>
+                    <a href="/login" class="primary-btn top-btn">Login</a>
+                    <a href="/register" class="primary-btn top-btn">Register</a>
+                </#if>
+            </ul>
+        </nav>
     </div>
     <div id="mobile-menu-wrap"></div>
 </div>

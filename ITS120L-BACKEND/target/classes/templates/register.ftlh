@@ -41,10 +41,11 @@
             <div class="nav-menu">
                 <nav class="mainmenu mobile-menu">
                     <ul>
-                        <li class="active"><a href="index.html">Home</a></li>
+                        <li><a href="/index">Home</a></li>
                         <li><a href="/schedule">Schedule</a></li>
-                        <li><a href="#">Event Registration</a></li>
-                        <li><a href="#">Event Survey</a></li>
+                        <li><a href="/event-registration">Event Registration</a></li>
+                        <li><a href="#">Attend</a></li>
+                        <li><a href="/survey">Survey</a></li>
                     </ul>
                 </nav>
                 <a href="/login" class="primary-btn top-btn">Login</a>
@@ -75,15 +76,16 @@
                         </div>
                         <ul>
                             <#if loggedInUser?? && loggedInUser.userType == "admin">
-                            <li><a href="#">Event Management</a></li>
-                            <li><a href="#">Report Analytics</a></li>
+                            <li><a href="/manage">Event Management</a></li>
+                            <li><a href="/analytics">Report Analytics</a></li>
                             <li><a href="#">Event Survey</a></li>
                             <li><a href="#">Profile</a></li>
                             <#else>
                             <li><a href="/index">Home</a></li>
                             <li><a href="/schedule">Schedule</a></li>
-                            <li><a href="#">Event Registration</a></li>
-                            <li><a href="#">Survey</a></li>
+                            <li><a href="/event-registration">Event Registration</a></li>
+                            <li><a href="#">Attend</a></li>
+                            <li><a href="/survey">Survey</a></li>
                         </#if>
                     </ul>
                     <div class="ft-social">

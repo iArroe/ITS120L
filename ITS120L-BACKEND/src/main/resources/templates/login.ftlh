@@ -40,17 +40,19 @@
         <div class="nav-menu">
             <nav class="mainmenu mobile-menu">
                 <ul>
-                    <li class="active"><a href="original index.html">Home</a></li>
-                    <li><a href="/schedule">Schedule</a></li>
-                    <li><a href="#">Event Registration</a></li>
-                    <li><a href="#">Event Survey</a></li>
-                </ul>
-            </nav>
-            <a href="/register" class="primary-btn top-btn">Register</a>
-        </div>
-        <div id="mobile-menu-wrap"></div>
-    </div>
+                <li><a href="/index">Home</a></li>
+                <li><a href="/schedule">Schedule</a></li>
+                <li><a href="/event-registration">Event Registration</a></li>
+                <li><a href="#">Attend</a></li>
+                <li><a href="/survey">Survey</a></li>
+                <a href="/register" class="primary-btn top-btn">Register</a>
+        </ul>
+    </nav>
+</div>
+<div id="mobile-menu-wrap"></div>
+</div>
 </header>
+
 <!-- Header End -->
 
 <form action="/login" method="post">
@@ -75,17 +77,11 @@
                         <a href="#" class="footer-logo"><img src="img/footer-logo.png" alt=""></a>
                     </div>
                     <ul>
-                        <#if loggedInUser?? && loggedInUser.userType == "admin">
-                        <li><a href="#">Event Management</a></li>
-                        <li><a href="#">Report Analytics</a></li>
-                        <li><a href="#">Event Survey</a></li>
-                        <li><a href="#">Profile</a></li>
-                        <#else>
                         <li><a href="/index">Home</a></li>
                         <li><a href="/schedule">Schedule</a></li>
-                        <li><a href="#">Event Registration</a></li>
-                        <li><a href="#">Survey</a></li>
-                    </#if>
+                        <li><a href="/event-registration">Event Registration</a></li>
+                        <li><a href="#">Attend</a></li>
+                        <li><a href="/survey">Survey</a></li>
                 </ul>
                 <div class="ft-social">
                     <a href="#"><i class="fa fa-facebook"></i></a>
