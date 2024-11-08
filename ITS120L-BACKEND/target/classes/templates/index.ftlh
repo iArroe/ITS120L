@@ -43,23 +43,26 @@
                     <ul>
                         <#if loggedInUser??>
                         <#if loggedInUser.userType == "admin">
-                        <li><a href="#">Event Management</a></li>
-                        <li><a href="#">Reporting Analytics</a></li>
+                        <li class="active"><a href="/index">Home</a></li>
+                        <li><a href="/manage">Event Management</a></li>
+                        <li><a href="/analytics">Reporting Analytics</a></li>
                         <li><a href="#">Event Survey</a></li>
                         <li><a href="#">Profile</a></li>
                         <a href="/logout" class="primary-btn top-btn">Logout</a>
                         <#else>
                         <li class="active"><a href="/index">Home</a></li>
                         <li><a href="/schedule">Schedule</a></li>
-                        <li><a href="#">Event Registration</a></li>
-                        <li><a href="#">Survey</a></li>
+                        <li><a href="/event-registration">Event Registration</a></li>
+                        <li><a href="#">Attend</a></li>
+                        <li><a href="/survey">Survey</a></li>
                         <a href="/logout" class="primary-btn top-btn">Logout</a>
                     </#if>
                     <#else>
                     <li class="active"><a href="/index">Home</a></li>
                     <li><a href="/schedule">Schedule</a></li>
-                    <li><a href="./event-registration.html">Event Registration</a></li>
-                    <li><a href="./event-survey.html">Survey</a></li>
+                    <li><a href="/event-registration">Event Registration</a></li>
+                    <li><a href="#">Attend</a></li>
+                    <li><a href="/survey">Survey</a></li>
                     <a href="/login" class="primary-btn top-btn">Login</a>
                     <a href="/register" class="primary-btn top-btn">Register</a>
                 </#if>
@@ -197,19 +200,21 @@
         <div class="col-lg-12">
             <div class="footer-text">
                 <div class="ft-logo">
-                    <a href="#" class="footer-logo"><img src="img/footer-logo.png" alt=""></a>
+                    <a href="/index" class="footer-logo"><img src="img/footer-logo.png" alt=""></a>
                 </div>
                 <ul>
                     <#if loggedInUser?? && loggedInUser.userType == "admin">
-                    <li><a href="#">Event Management</a></li>
-                    <li><a href="#">Report Analytics</a></li>
+                    <li><a href="/index">Home</a></li>
+                    <li><a href="/manage">Event Management</a></li>
+                    <li><a href="/analytics">Report Analytics</a></li>
                     <li><a href="#">Event Survey</a></li>
                     <li><a href="#">Profile</a></li>
                     <#else>
                     <li><a href="/index">Home</a></li>
                     <li><a href="/schedule">Schedule</a></li>
-                    <li><a href="#">Event Registration</a></li>
-                    <li><a href="#">Survey</a></li>
+                    <li><a href="/event-registration">Event Registration</a></li>
+                    <li><a href="#">Attend</a></li>
+                    <li><a href="/survey">Survey</a></li>
                 </#if>
             </ul>
             <div class="ft-social">

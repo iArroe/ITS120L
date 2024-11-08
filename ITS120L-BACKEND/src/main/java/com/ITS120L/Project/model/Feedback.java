@@ -11,11 +11,11 @@ public class Feedback {
     private long feedbackId;
 
     @ManyToOne
-    @JoinColumn(name = "eventId", referencedColumnName = "eventId", insertable = false, updatable = false)
+    @JoinColumn(name = "eventId", referencedColumnName = "eventId")
     private Event event;
 
     @ManyToOne
-    @JoinColumn(name = "userId", referencedColumnName = "userId", insertable = false, updatable = false)
+    @JoinColumn(name = "userId", referencedColumnName = "userId")
     private User user;
 
     private String comment;
