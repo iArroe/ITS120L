@@ -36,9 +36,9 @@
                 <ul>
                     <li><a href="/index">Home</a></li>
                     <li><a href="/manage">Event Management</a></li>
-                    <li class="active"><a href="/analytics">Reporting Analytics</a></li>
-                    <li><a href="#">Event Survey</a></li>
-                    <li><a href="#">Profile</a></li>
+                    <li class="active"><a href="/analytics">Report Analytics</a></li>
+                    <li><a href="/event-surveys">Event Survey</a></li>
+                    <li><a href="/update-profile">Profile</a></li>
                     <a href="/logout" class="primary-btn top-btn">Logout</a>
                  </ul>
             </nav>
@@ -91,19 +91,11 @@
                         </a>
                     </div>
                     <ul>
-                        <li> <a href ="/index">Home</a></li>
-                        <li>
-                            <a href="/manage-event">Event Management</a>
-                        </li>
-                        <li>
-                            <a href="/analytics">Report Analytics</a>
-                        </li>
-                        <li>
-                            <a href="#">Event Survey</a>
-                        </li>
-                        <li>
-                            <a href="#">Profile</a>
-                        </li>
+                        <li><a href="/index">Home</a></li>
+                        <li><a href="/manage">Event Management</a></li>
+                        <li><a href="/analytics">Report Analytics</a></li>
+                        <li><a href="/event-surveys">Event Survey</a></li>
+                        <li><a href="/update-profile">Profile</a></li>
                     </ul>
                     <div class="ft-social">
                         <a href="#">

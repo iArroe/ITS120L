@@ -43,24 +43,23 @@
                     <#if loggedInUser??>
                     <#if loggedInUser.userType == "admin">
                     <li><a href="/index">Home</a></li>
-                    <li><a href="/manage-event">Event Management</a></li>
-                    <li><a href="/analytics">Reporting Analytics</a></li>
-                    <li><a href="#">Event Survey</a></li>
-                    <li><a href="#">Profile</a></li>
+                    <li class="active"><a href="/manage">Event Management</a></li>
+                    <li><a href="/analytics">Report Analytics</a></li>
+                    <li><a href="/event-surveys">Event Survey</a></li>
+                    <li><a href="/update-profile">Profile</a></li>
                     <a href="/logout" class="primary-btn top-btn">Logout</a>
                     <#else>
                     <li><a href="/index">Home</a></li>
                     <li><a href="/schedule">Schedule</a></li>
-                    <li class="active"><a href="/event-registration">Event Registration</a></li>
-                    <li><a href="#">Attend</a></li>
+                    <li><a href="/event-registration">Event Registration</a></li>
                     <li><a href="/survey">Survey</a></li>
+                    <li><a href="/update-profile">Profile</a></li>
                     <a href="/logout" class="primary-btn top-btn">Logout</a>
                 </#if>
                 <#else>
-                <li class="active"><a href="/index">Home</a></li>
+                <li><a href="/index">Home</a></li>
                 <li><a href="/schedule">Schedule</a></li>
                 <li><a href="/event-registration">Event Registration</a></li>
-                <li><a href="#">Attend</a></li>
                 <li><a href="/survey">Survey</a></li>
                 <a href="/login" class="primary-btn top-btn">Login</a>
                 <a href="/register" class="primary-btn top-btn">Register</a>
@@ -68,6 +67,9 @@
         </ul>
     </nav>
 </div>
+<div id="mobile-menu-wrap"></div>
+</div>
+</header>
 <div id="mobile-menu-wrap"></div>
 </div>
 </header>
@@ -120,11 +122,11 @@
                     <a href="/index" class="footer-logo"><img src="img/footer-logo.png" alt=""></a>
                 </div>
                 <ul>
-                    <li><a href="/index">Event Survey</a></li>
+                    <li><a href="/index">Home</a></li>
                     <li><a href="/manage">Event Management</a></li>
                     <li><a href="/analytics">Report Analytics</a></li>
-                    <li><a href="#">Event Survey</a></li>
-                    <li><a href="#">Profile</a></li>
+                    <li><a href="/event-surveys">Event Survey</a></li>
+                    <li><a href="/update-profile">Profile</a></li>
                 </ul>
             <div class="ft-social">
                 <a href="#"><i class="fa fa-facebook"></i></a>
