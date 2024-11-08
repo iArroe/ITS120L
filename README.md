@@ -2,6 +2,9 @@
 
 
 #Group Members
-#Embornas, Sean
-#Maglantay, Keith
-#Petalver, Lorelei
+
+Embornas, Sean
+
+Maglantay, Keith
+
+Petalver, Lorelei
