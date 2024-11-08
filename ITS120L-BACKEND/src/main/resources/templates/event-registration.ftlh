@@ -40,30 +40,30 @@
         <div class="nav-menu">
             <nav class="mainmenu mobile-menu">
                 <ul>
-                    <#if loggedInUser??>
                     <#if loggedInUser.userType == "admin">
-                    <li><a href="/index">Home</a></li>
-                    <li><a href="/manage-event">Event Management</a></li>
+                    <li><a href="/manage">Event Management</a></li>
                     <li><a href="/analytics">Reporting Analytics</a></li>
-                    <li><a href="#">Event Survey</a></li>
-                    <li><a href="#">Profile</a></li>
+                    <li><a href="/event-surveys">Event Survey</a></li>
+                    <li><a href="/update-profile">Profile</a></li>
                     <a href="/logout" class="primary-btn top-btn">Logout</a>
                     <#else>
                     <li><a href="/index">Home</a></li>
                     <li><a href="/schedule">Schedule</a></li>
-                    <li class="active"><a href="/event-registration">Event Registration</a></li>
-                    <li><a href="#">Attend</a></li>
+                    <li class="active"><a href="#">Event Registration</a></li>
                     <li><a href="/survey">Survey</a></li>
+                    <li><a href="/update-profile">Profile</a></li>
                     <a href="/logout" class="primary-btn top-btn">Logout</a>
-                    </#if>
-                    </#if>
-                </ul>
-            </nav>
-        </div>
+                </#if>
+            </ul>
+        </nav>
+        <#if !loggedInUser??>
+        <a href="/login" class="primary-btn top-btn">login</a>
+        <a href="/register" class="primary-btn top-btn">Register</a>
+    </#if>
+</div>
 <div id="mobile-menu-wrap"></div>
 </div>
 </header>
-
         <!-- Header End -->
 
         <!-- Event Registration Form Section Start -->
@@ -109,7 +109,7 @@
                 <ul>
                     <#if loggedInUser?? && loggedInUser.userType == "admin">
                     <li><a href="#">Event Management</a></li>
-                    <li><a href="/analytics">Report Analytics</a></li>
+                    <li><a href="#">Report Analytics</a></li>
                     <li><a href="#">Event Survey</a></li>
                     <li><a href="#">Profile</a></li>
                     <#else>
@@ -117,7 +117,7 @@
                     <li><a href="/schedule">Schedule</a></li>
                     <li class="active"><a href="#">Event Registration</a></li>
                     <li><a href="#">Attend</a></li>
-                    <li><a href="/survey">Survey</a></li>
+                    <li><a href="#">Survey</a></li>
                 </#if>
             </ul>
             <div class="ft-social">

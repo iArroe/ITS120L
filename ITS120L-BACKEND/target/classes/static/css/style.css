@@ -2692,5 +2692,64 @@ form[action="/login"] input[type="submit"]:hover {
     white-space: pre-wrap;
 }
 
+.event-container {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
 
+.event-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.feedback-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background-color: #fff;
+}
+
+.feedback-table th, .feedback-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.feedback-table th {
+    background-color: #000621;
+    color: white;
+    font-weight: bold;
+}
+
+.feedback-table td {
+    background-color: #f9f9f9;
+}
+
+.feedback-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.feedback-table tr:hover {
+    background-color: #ddd;
+}
+
+.no-feedback {
+    text-align: center;
+    font-style: italic;
+    color: #888;
+}
+
+@media (max-width: 768px) {
+    .feedback-table th, .feedback-table td {
+        padding: 8px 10px;
+    }
+
+    .event-title {
+        font-size: 20px;
+    }
+}
 

@@ -42,8 +42,8 @@
                     <li><a href="/index">Home</a></li>
                     <li><a href="/schedule">Schedule</a></li>
                     <li><a href="/event-registration">Event Registration</a></li>
-                    <li><a href="#">Attend</a></li>
                     <li class="active"><a href="/survey">Survey</a></li>
+                    <li><a href="/update-profile">Profile</a></li>
                     <a href="/logout" class="primary-btn top-btn">Logout</a>
                 </ul>
     </nav>

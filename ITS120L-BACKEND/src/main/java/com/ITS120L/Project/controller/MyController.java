@@ -107,6 +107,47 @@ public class MyController {
     }
 
     // ====================================
+    // User Management Admin - Update Profile
+    // ====================================
+
+    @GetMapping("/update-profile")
+    public String showEditProfileForm(HttpSession session, Model model) {
+        User loggedInUser = (User) session.getAttribute("loggedInUser");
+        if (loggedInUser != null) {
+            model.addAttribute("user", loggedInUser);
+            return "update-profile";
+        } else {
+            return "redirect:/login";
+        }
+    }
+
+    @PostMapping("/update-profile")
+    public String updateProfile(@ModelAttribute User updatedUser,
+                                @RequestParam("confirmPassword") String confirmPassword,
+                                HttpSession session,
+                                Model model) {
+        User loggedInUser = (User) session.getAttribute("loggedInUser");
+        if (loggedInUser != null) {
+            if (!updatedUser.getPassword().equals(confirmPassword)) {
+                model.addAttribute("errorMessage", "Passwords do not match");
+                return "edit-profile";  // Return to the form with an error message
+            }
+
+            loggedInUser.setName(updatedUser.getName());
+            loggedInUser.setEmail(updatedUser.getEmail());
+            loggedInUser.setPassword(updatedUser.getPassword());
+
+            userService.addUser(loggedInUser);
+            session.setAttribute("loggedInUser", loggedInUser);
+
+            return "redirect:/index";
+        } else {
+            return "redirect:/login";
+        }
+    }
+
+
+    // ====================================
     // User Controls - Create Event
     // ====================================
 
@@ -248,6 +289,19 @@ public class MyController {
     public String deleteEvent(@PathVariable long eventId, @ModelAttribute Event updatedEvent) {
         Event event = eventService.deleteEvent(eventId);
         return "redirect:/manage";
+    }
+
+    // ====================================
+    // Admin Controls - Fetch Feedbacks for Events
+    // ====================================
+
+    @GetMapping("/event-surveys")
+    public String showEventSurveys(Model model) {
+        List<Event> events = (List<Event>) eventService.findAll();
+        List<Feedback> feedbacks = (List<Feedback>) feedbackService.findAll();
+        model.addAttribute("events", events);
+        model.addAttribute("feedbacks", feedbacks);
+        return "a-surveys";
     }
 
     // ====================================

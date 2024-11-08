@@ -44,7 +44,6 @@
                         <li><a href="/index">Home</a></li>
                         <li><a href="/schedule">Schedule</a></li>
                         <li><a href="/event-registration">Event Registration</a></li>
-                        <li><a href="#">Attend</a></li>
                         <li><a href="/survey">Survey</a></li>
                     </ul>
                 </nav>
@@ -84,7 +83,6 @@
                             <li><a href="/index">Home</a></li>
                             <li><a href="/schedule">Schedule</a></li>
                             <li><a href="/event-registration">Event Registration</a></li>
-                            <li><a href="#">Attend</a></li>
                             <li><a href="/survey">Survey</a></li>
                         </#if>
                     </ul>

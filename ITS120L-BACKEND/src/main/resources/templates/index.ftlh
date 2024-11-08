@@ -45,23 +45,22 @@
                         <#if loggedInUser.userType == "admin">
                         <li class="active"><a href="/index">Home</a></li>
                         <li><a href="/manage">Event Management</a></li>
-                        <li><a href="/analytics">Reporting Analytics</a></li>
-                        <li><a href="#">Event Survey</a></li>
-                        <li><a href="#">Profile</a></li>
+                        <li><a href="/analytics">Report Analytics</a></li>
+                        <li><a href="/event-surveys">Event Survey</a></li>
+                        <li><a href="/update-profile">Profile</a></li>
                         <a href="/logout" class="primary-btn top-btn">Logout</a>
                         <#else>
-                        <li class="active"><a href="/index">Home</a></li>
+                        <li><a href="/index">Home</a></li>
                         <li><a href="/schedule">Schedule</a></li>
                         <li><a href="/event-registration">Event Registration</a></li>
-                        <li><a href="#">Attend</a></li>
                         <li><a href="/survey">Survey</a></li>
+                        <li><a href="/update-profile">pROFILE</a></li>
                         <a href="/logout" class="primary-btn top-btn">Logout</a>
                     </#if>
                     <#else>
                     <li class="active"><a href="/index">Home</a></li>
                     <li><a href="/schedule">Schedule</a></li>
                     <li><a href="/event-registration">Event Registration</a></li>
-                    <li><a href="#">Attend</a></li>
                     <li><a href="/survey">Survey</a></li>
                     <a href="/login" class="primary-btn top-btn">Login</a>
                     <a href="/register" class="primary-btn top-btn">Register</a>
@@ -208,7 +207,7 @@
                     <li><a href="/manage">Event Management</a></li>
                     <li><a href="/analytics">Report Analytics</a></li>
                     <li><a href="#">Event Survey</a></li>
-                    <li><a href="#">Profile</a></li>
+                    <li><a href="/update">Profile</a></li>
                     <#else>
                     <li><a href="/index">Home</a></li>
                     <li><a href="/schedule">Schedule</a></li>
